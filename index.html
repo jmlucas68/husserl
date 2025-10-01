@@ -1,134 +1,1251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edmund Husserl - Fenomenología</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: #f2f2f2;
-      color: #333;
-    }
-    header {
-      background: #263238;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    main {
-      padding: 2rem;
-      max-width: 960px;
-      margin: auto;
-      background: white;
-    }
-    h2 {
-      color: #263238;
-      border-bottom: 2px solid #90a4ae;
-      padding-bottom: 0.3rem;
-    }
-    blockquote {
-      font-style: italic;
-      border-left: 4px solid #90a4ae;
-      padding-left: 1rem;
-      color: #555;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      background: #263238;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    a {
-      color: #1565c0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edmund Husserl - Padre de la Fenomenología</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-light: #ecf0f1;
+            --bg-white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            box-shadow: var(--shadow-hover);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.05)"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        .dates {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background: var(--secondary-color);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--secondary-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 5px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            position: relative;
+            z-index: 1;
+            color: var(--text-color);
+        }
+
+        .quote-source {
+            margin-top: 1rem;
+            text-align: right;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-style: normal;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .obras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .obra-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .obra-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-top-color: var(--accent-color);
+        }
+
+        .obra-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+        }
+
+        .obra-year {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .enlaces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background: #c0392b;
+        }
+
+        .influencias-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .influencia-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .influencia-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .influencia-nombre {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contexto-timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 2rem 0;
+        }
+
+        .contexto-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .fuentes-list {
+            display: grid;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .fuente-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .fuente-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .fuente-item a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            .content {
+                padding: 2rem 1rem;
+            }
+
+            .contexto-timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item::before {
+                left: -2.5rem;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-hover);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--accent-color);
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Edmund Husserl</h1>
-    <p>Vida, obra y pensamiento del fundador de la fenomenología</p>
-  </header>
+    <div class="container">
+        <header>
+            <h1>Edmund Husserl</h1>
+            <p class="subtitle">Padre de la Fenomenología</p>
+            <p class="dates">1859 - 1938</p>
+        </header>
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-700 to-purple-700 text-white shadow-lg">
-    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-      <a href="https://jmlucas68.github.io/husserl/EdmundHusserl.pdf" target="_blank" rel="noopener noreferrer"
-         class="px-4 py-2 bg-white text-blue-800 rounded hover:bg-gray-100 transition">Ver PDF</a>
+        <nav>
+            <ul>
+                <li><a href="#biografia">Biografía</a></li>
+                <li><a href="#pensamiento">Pensamiento</a></li>
+                <li><a href="#obras">Obras Principales</a></li>
+                <li><a href="#influencias">Influencias</a></li>
+                <li><a href="#contexto">Contexto</a></li>
+                <li><a href="#fuentes">Fuentes</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="biografia">
+                <h2>Biografía</h2>
+                <p>
+                    <strong>Edmund Gustav Albrecht Husserl</strong> nació el 8 de abril de 1859 en Proßnitz (actual Prostějov, República Checa), 
+                    Moravia, entonces provincia del Imperio Austrohúngaro. Fue un filósofo y matemático alemán que fundó la escuela 
+                    fenomenológica, una de las corrientes filosóficas más influyentes del siglo XX.
+                </p>
+
+                <div class="contexto-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1859</div>
+                        <p>Nace en Proßnitz, Moravia, en una familia judía.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1876-1881</div>
+                        <p>Estudia matemáticas, física y astronomía en las universidades de Leipzig, Berlín y Viena.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1883</div>
+                        <p>Obtiene su doctorado en matemáticas en Viena bajo la dirección de Leo Königsberger.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1884-1886</div>
+                        <p>Estudia con Franz Brentano en Viena, quien despierta su interés por la filosofía.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1887</div>
+                        <p>Se habilita como docente en la Universidad de Halle bajo la dirección de Carl Stumpf.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1900-1901</div>
+                        <p>Publica las <em>Investigaciones Lógicas</em>, obra fundamental que marca el nacimiento de la fenomenología.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1906</div>
+                        <p>Es nombrado profesor en la Universidad de Gotinga.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1913</div>
+                        <p>Publica <em>Ideas relativas a una fenomenología pura y una filosofía fenomenológica</em> (Ideas I).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1916</div>
+                        <p>Se traslada a la Universidad de Friburgo de Brisgovia, donde permanecerá hasta su jubilación.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1928</div>
+                        <p>Se jubila de su cátedra. Martin Heidegger lo sucede.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1929</div>
+                        <p>Publica <em>Lógica Formal y Lógica Trascendental</em>.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1931</div>
+                        <p>Publica <em>Meditaciones Cartesianas</em> tras sus conferencias en la Sorbona.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1933</div>
+                        <p>El régimen nazi le prohíbe enseñar por su origen judío.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1936</div>
+                        <p>Publica la primera parte de <em>La crisis de las ciencias europeas y la fenomenología trascendental</em>.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1938</div>
+                        <p>Fallece el 27 de abril en Friburgo de Brisgovia, Alemania.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pensamiento">
+                <h2>Pensamiento Filosófico</h2>
+
+                <h3>La Fenomenología como Ciencia Rigurosa</h3>
+                <p>
+                    Edmund Husserl desarrolló la fenomenología con el objetivo de convertir la filosofía en una <strong>ciencia rigurosa</strong> 
+                    (<em>strenge Wissenschaft</em>), libre del escepticismo y el relativismo que, según él, amenazaban el conocimiento a 
+                    finales del siglo XIX. La fenomenología se propone como una ciencia <em>a priori</em> que estudia los fenómenos tal 
+                    como se presentan a la conciencia, sin presupuestos ni prejuicios.
+                </p>
+
+                <div class="quote">
+                    <p class="quote-text">
+                        "¡A las cosas mismas!" (<em>Zu den Sachen selbst!</em>)
+                    </p>
+                    <p class="quote-source">— Lema fundamental de la fenomenología husserliana</p>
+                </div>
+
+                <h3>El Método Fenomenológico</h3>
+                <p>
+                    El método fenomenológico desarrollado por Husserl consiste en varios pasos fundamentales:
+                </p>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">1. La Reducción Fenomenológica (Epojé)</h4>
+                    <p>
+                        Consiste en "poner entre paréntesis" o suspender todas las suposiciones y prejuicios sobre el mundo exterior. 
+                        Este proceso, también conocido como <strong>epojé</strong>, permite que la investigación se centre exclusivamente 
+                        en las estructuras esenciales de la conciencia. No se trata de negar la existencia del mundo, sino de abstenerse 
+                        de hacer juicios sobre su existencia para poder estudiar cómo se nos aparece.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">2. La Intencionalidad de la Conciencia</h4>
+                    <p>
+                        La conciencia es siempre conciencia <em>de</em> algo. Este carácter intencional significa que toda experiencia 
+                        consciente se dirige hacia un objeto. Husserl distingue entre el acto de conciencia (<strong>noesis</strong>) 
+                        y el objeto hacia el cual se dirige (<strong>noema</strong>). Esta estructura intencional es fundamental para 
+                        comprender cómo conocemos el mundo.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">3. La Reducción Eidética</h4>
+                    <p>
+                        Permite acceder a las esencias o estructuras invariantes de los fenómenos. A través de la variación imaginativa, 
+                        buscamos aquello que permanece idéntico en todas las variaciones posibles de un fenómeno, descubriendo así su 
+                        esencia (<em>eidos</em>).
+                    </p>
+                </div>
+
+                <div class="quote">
+                    <p class="quote-text">
+                        "La filosofía es la ciencia de los verdaderos comienzos, de los orígenes, de las raíces de todas las cosas."
+                    </p>
+                    <p class="quote-source">— Ideas relativas a una fenomenología pura (1913)</p>
+                </div>
+
+                <h3>Crítica al Psicologismo</h3>
+                <p>
+                    En sus <em>Investigaciones Lógicas</em> (1900-1901), Husserl realizó una devastadora crítica al 
+                    <strong>psicologismo</strong>, la tendencia a fundamentar las leyes lógicas en procesos psicológicos. Para Husserl, 
+                    las verdades lógicas son objetivas, universales y necesarias, mientras que los procesos psicológicos son subjetivos, 
+                    particulares y contingentes. Las leyes lógicas no describen cómo pensamos de hecho, sino cómo debemos pensar para 
+                    alcanzar la verdad.
+                </p>
+
+                <div class="quote">
+                    <p class="quote-text">
+                        "Las ideas que describen los psicólogos son ideas vagas, individuales y subjetivas. Mientras que las ideas de 
+                        la lógica son, por lo contrario, precisas, universales y objetivas."
+                    </p>
+                    <p class="quote-source">— Investigaciones Lógicas (1900-1901)</p>
+                </div>
+
+                <h3>El Ego Trascendental</h3>
+                <p>
+                    La reducción fenomenológica conduce al descubrimiento del <strong>ego trascendental</strong>, que se diferencia del 
+                    "ego empírico" al ser el núcleo puro desde el cual se originan todas las experiencias. Este ego trascendental no es 
+                    un objeto en el mundo, sino la condición de posibilidad de toda experiencia del mundo. Es el "residuo fenomenológico" 
+                    que queda tras la epojé.
+                </p>
+
+                <h3>La Conciencia del Tiempo</h3>
+                <p>
+                    Husserl dedicó importantes análisis a la estructura temporal de la conciencia. Toda experiencia consciente tiene una 
+                    estructura temporal tripartita: <strong>retención</strong> (conciencia del pasado inmediato), <strong>impresión 
+                    originaria</strong> (conciencia del presente) y <strong>protención</strong> (anticipación del futuro inmediato). 
+                    Esta temporalidad es el fundamento de nuestra historicidad y de la unidad de nuestra experiencia.
+                </p>
+
+                <div class="quote">
+                    <p class="quote-text">
+                        "Todo presente retiene un pasado y lleva en germen un futuro que condiciona nuestra experiencia."
+                    </p>
+                    <p class="quote-source">— Lecciones de fenomenología de la conciencia interna del tiempo</p>
+                </div>
+
+                <h3>La Intersubjetividad</h3>
+                <p>
+                    En sus <em>Meditaciones Cartesianas</em> (1931), Husserl aborda el problema de la intersubjetividad para responder 
+                    a las acusaciones de solipsismo. A través del concepto de <strong>empatía</strong> (<em>Einfühlung</em>), explica 
+                    cómo somos conscientes de los otros sujetos. Cuando percibimos el cuerpo de otro, captamos inmediatamente que no es 
+                    un mero objeto físico, sino la expresión de otra conciencia similar a la nuestra.
+                </p>
+
+                <h3>El Mundo de la Vida (Lebenswelt)</h3>
+                <p>
+                    En su obra tardía, especialmente en <em>La crisis de las ciencias europeas y la fenomenología trascendental</em> 
+                    (1936), Husserl introduce el concepto de <strong>mundo de la vida</strong> (<em>Lebenswelt</em>). Se trata del 
+                    mundo preteórico, precientífico, tal como es vivido cotidianamente. Este mundo de la vida es el fundamento olvidado 
+                    sobre el cual se construyen las ciencias, y su olvido ha conducido a la crisis de las ciencias europeas.
+                </p>
+
+                <div class="card">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">La Crisis de las Ciencias</h4>
+                    <p>
+                        Husserl diagnostica que las ciencias modernas, a partir de Galileo, han caído en un <strong>objetivismo 
+                        ingenuo</strong> y un <strong>positivismo</strong> que olvida que es la subjetividad la que hace posible 
+                        toda objetividad. Las ciencias han perdido su significado para la vida humana al reducir la realidad a 
+                        lo cuantificable y mensurable, olvidando el mundo vivido que es su fundamento.
+                    </p>
+                </div>
+
+                <div class="quote">
+                    <p class="quote-text">
+                        "Las ciencias se encuentran en una crisis. Ésta es fruto de un determinado desarrollo de la idea —originalmente 
+                        griega— de teoría, de ciencia, el cual ha llevado a una serie de consecuencias peligrosas."
+                    </p>
+                    <p class="quote-source">— La crisis de las ciencias europeas (1936)</p>
+                </div>
+
+                <h3>Ética y Axiología</h3>
+                <p>
+                    Aunque menos conocida, Husserl también desarrolló reflexiones éticas y axiológicas. Inicialmente defendió un 
+                    <strong>racionalismo ético</strong> análogo al imperativo categórico kantiano, pero posteriormente evolucionó 
+                    hacia una concepción que reconoce el papel del <strong>amor</strong> y la <strong>vocación individual</strong> 
+                    como dimensiones más profundas de la persona que abren nuevos valores subjetivos.
+                </p>
+            </section>
+
+            <section id="obras">
+                <h2>Obras Principales</h2>
+
+                <div class="obras-grid">
+                    <div class="obra-card">
+                        <div class="obra-title">Filosofía de la Aritmética</div>
+                        <div class="obra-year">1891</div>
+                        <p>
+                            Primera obra importante de Husserl, todavía bajo la influencia del psicologismo. Estudia los fundamentos 
+                            psicológicos y lógicos de la aritmética. Esta obra sería posteriormente criticada por el propio Husserl 
+                            en su giro antipsicologista.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://www.amazon.es/s?k=Husserl+Filosof%C3%ADa+Aritm%C3%A9tica" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">Investigaciones Lógicas</div>
+                        <div class="obra-year">1900-1901</div>
+                        <p>
+                            Obra fundamental en dos volúmenes que marca el nacimiento de la fenomenología. El primer volumen contiene 
+                            los <em>Prolegómenos a la lógica pura</em>, una refutación del psicologismo. El segundo volumen desarrolla 
+                            seis investigaciones fenomenológicas sobre el conocimiento, la conciencia, las significaciones y la intencionalidad.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://archive.org/search.php?query=Husserl%20Investigaciones%20L%C3%B3gicas" target="_blank" class="btn">Archive.org</a>
+                            <a href="https://www.amazon.es/s?k=Husserl+Investigaciones+L%C3%B3gicas" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">La idea de la fenomenología</div>
+                        <div class="obra-year">1907</div>
+                        <p>
+                            Serie de cinco lecciones impartidas en Gotinga. Supone la primera exposición pública del sentido y las 
+                            implicaciones de la fenomenología trascendental. Aquí surge propiamente la fenomenología como crítica del 
+                            conocimiento y se introduce el concepto de reducción fenomenológica.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://www.amazon.es/s?k=Husserl+idea+fenomenolog%C3%ADa" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">Ideas relativas a una fenomenología pura y una filosofía fenomenológica (Ideas I)</div>
+                        <div class="obra-year">1913</div>
+                        <p>
+                            Obra sistemática fundamental donde Husserl expone la fenomenología trascendental en su plenitud. Desarrolla 
+                            los conceptos de epojé, reducción eidética, noesis y noema, el ego trascendental y la constitución de 
+                            objetividades. Es la primera gran presentación sistemática de la fenomenología trascendental.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://archive.org/search.php?query=Husserl%20Ideas%20fenomenolog%C3%ADa" target="_blank" class="btn">Archive.org</a>
+                            <a href="https://www.amazon.es/s?k=Husserl+Ideas+fenomenolog%C3%ADa" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">Lecciones de fenomenología de la conciencia interna del tiempo</div>
+                        <div class="obra-year">1928 (lecciones de 1905)</div>
+                        <p>
+                            Análisis profundo de la estructura temporal de la conciencia. Desarrolla los conceptos de retención, 
+                            impresión originaria y protención. Estas lecciones son fundamentales para comprender la temporalidad 
+                            de la experiencia y la constitución del tiempo objetivo.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://www.amazon.es/s?k=Husserl+conciencia+tiempo" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">Lógica Formal y Lógica Trascendental</div>
+                        <div class="obra-year">1929</div>
+                        <p>
+                            Una de las obras más maduras de Husserl. Desarrolla una fundamentación fenomenológica de la lógica, 
+                            distinguiendo entre lógica formal y lógica trascendental. Incorpora sus descubrimientos sobre la 
+                            temporalidad para esclarecer las objetividades ideales.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://www.amazon.es/s?k=Husserl+L%C3%B3gica+Formal+Trascendental" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">Meditaciones Cartesianas</div>
+                        <div class="obra-year">1931</div>
+                        <p>
+                            Resultado de unas conferencias impartidas en la Sorbona en 1929. Es una introducción sistemática a la 
+                            fenomenología trascendental inspirada en las <em>Meditaciones</em> de Descartes. Aborda especialmente 
+                            el problema de la intersubjetividad y la constitución del otro a través de la empatía.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://richardfong.files.wordpress.com/2011/02/husserl-edmund-meditaciones-cartesianas-fce-1996.pdf" target="_blank" class="btn">PDF</a>
+                            <a href="https://www.amazon.es/s?k=Husserl+Meditaciones+Cartesianas" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+
+                    <div class="obra-card">
+                        <div class="obra-title">La crisis de las ciencias europeas y la fenomenología trascendental</div>
+                        <div class="obra-year">1936</div>
+                        <p>
+                            Última gran obra de Husserl, publicada parcialmente en vida. Analiza la crisis de las ciencias modernas 
+                            y su pérdida de significado para la vida humana. Introduce el concepto fundamental de <em>mundo de la 
+                            vida</em> (<em>Lebenswelt</em>) y revisa críticamente las vías de acceso a la reducción fenomenológica.
+                        </p>
+                        <div class="enlaces">
+                            <a href="https://www.amazon.es/s?k=Husserl+crisis+ciencias+europeas" target="_blank" class="btn btn-accent">Amazon</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h3 style="color: var(--primary-color); margin-top: 0;">Obras Póstumas Importantes</h3>
+                    <ul>
+                        <li><strong>Ideas II</strong>: Trabajado entre 1910-1920, publicado póstumamente. Influyó en Heidegger y 
+                        Merleau-Ponty. Aborda la corporalidad, la intersubjetividad y el mundo de la vida.</li>
+                        <li><strong>Ideas III</strong>: Sobre fenomenología y ontología.</li>
+                        <li><strong>Experiencia y Juicio</strong>: Sobre la lógica genética de la experiencia antepredicativa.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="influencias">
+                <h2>Influencias e Impacto</h2>
+
+                <h3>Influencias Recibidas</h3>
+                <div class="influencias-container">
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Franz Brentano</div>
+                        <p>
+                            Maestro fundamental de Husserl (1884-1886). De él toma el concepto de <strong>intencionalidad de la 
+                            conciencia</strong>, aunque lo desarrollará en direcciones que Brentano no aceptó. Brentano despertó 
+                            el interés de Husserl por la filosofía y le transmitió el ideal de una filosofía científica, aunque 
+                            también su crítica a Kant.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">René Descartes</div>
+                        <p>
+                            Husserl se inspira en el método cartesiano de la duda metódica para desarrollar su propia reducción 
+                            fenomenológica. Las <em>Meditaciones Cartesianas</em> siguen explícitamente el modelo de las 
+                            <em>Meditaciones</em> de Descartes, aunque divergen fundamentalmente en su desarrollo.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Immanuel Kant</div>
+                        <p>
+                            Aunque inicialmente adverso a Kant por influencia de Brentano, Husserl realiza un "giro trascendental" 
+                            que lo acerca a motivos kantianos. La fenomenología trascendental asume cuestiones fundamentales del 
+                            criticismo kantiano, aunque reformuladas fenomenológicamente. Husserl se considera continuador de la 
+                            filosofía trascendental kantiana.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Bernard Bolzano</div>
+                        <p>
+                            Su distinción entre verdades en sí y representaciones psicológicas influyó en la crítica husserliana 
+                            al psicologismo y en su concepción de las verdades lógicas como objetivas e ideales.
+                        </p>
+                    </div>
+                </div>
+
+                <h3>Influencia Ejercida</h3>
+                <p>
+                    La fenomenología de Husserl ejerció una influencia decisiva en la filosofía del siglo XX, dando origen a 
+                    múltiples corrientes filosóficas:
+                </p>
+
+                <div class="influencias-container">
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Martin Heidegger</div>
+                        <p>
+                            Asistente y sucesor de Husserl en Friburgo. Aunque inicialmente fenomenólogo, Heidegger reorienta la 
+                            fenomenología hacia una <strong>ontología fundamental</strong> en <em>Ser y Tiempo</em> (1927). Su 
+                            concepto de <em>Dasein</em> y su analítica existencial parten de la fenomenología husserliana pero la 
+                            transforman radicalmente. La ruptura entre ambos fue tanto filosófica como personal.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Jean-Paul Sartre</div>
+                        <p>
+                            El <strong>existencialismo</strong> sartreano se basa en la fenomenología husserliana, especialmente 
+                            en el concepto de intencionalidad. En <em>La trascendencia del ego</em> (1936) y <em>El ser y la nada</em> 
+                            (1943), Sartre proyecta los caracteres de la conciencia fenomenológica sobre el ser del hombre en el mundo, 
+                            alejándose del idealismo trascendental husserliano.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Maurice Merleau-Ponty</div>
+                        <p>
+                            Desarrolla una <strong>fenomenología de la percepción</strong> centrada en la corporalidad y la experiencia 
+                            vivida. En <em>Fenomenología de la percepción</em> (1945) critica el intelectualismo husserliano y enfatiza 
+                            el cuerpo vivido y el mundo de la vida. Fue pionero en el estudio interdisciplinario que combinó fenomenología, 
+                            psicología de la Gestalt y neurofisiología.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Emmanuel Lévinas</div>
+                        <p>
+                            Uno de los primeros en introducir la fenomenología en Francia. Desarrolla una <strong>fenomenología ética</strong> 
+                            centrada en la alteridad y la responsabilidad hacia el Otro. Critica el primado husserliano de la conciencia 
+                            teórica.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Max Scheler</div>
+                        <p>
+                            Aplica el método fenomenológico a la <strong>ética y la axiología</strong>. Desarrolla una fenomenología 
+                            de los valores y de la persona humana, enfatizando la dimensión afectiva de la experiencia.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Edith Stein</div>
+                        <p>
+                            Asistente de Husserl, desarrolló análisis fenomenológicos de la empatía, la persona humana y la experiencia 
+                            mística. Su trabajo doctoral sobre la empatía (1916) fue supervisado por Husserl.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Roman Ingarden</div>
+                        <p>
+                            Discípulo polaco de Husserl que aplicó la fenomenología a la <strong>estética y la ontología</strong>. 
+                            Desarrolló una teoría fenomenológica de la obra de arte literaria.
+                        </p>
+                    </div>
+
+                    <div class="influencia-card">
+                        <div class="influencia-nombre">Paul Ricoeur</div>
+                        <p>
+                            Desarrolla una <strong>fenomenología hermenéutica</strong> que combina el método fenomenológico con la 
+                            interpretación. Critica el idealismo husserliano pero mantiene el método fenomenológico como fundamental.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h3 style="color: var(--primary-color); margin-top: 0;">Impacto en Otras Disciplinas</h3>
+                    <ul>
+                        <li><strong>Psicología fenomenológica</strong>: Influencia en la psicología de la Gestalt, la psicología 
+                        humanista y la psiquiatría fenomenológica (Ludwig Binswanger, Medard Boss).</li>
+                        <li><strong>Sociología</strong>: Alfred Schütz desarrolla una sociología fenomenológica del mundo de la vida.</li>
+                        <li><strong>Ciencias cognitivas</strong>: La fenomenología husserliana ha influido en debates contemporáneos 
+                        sobre la conciencia y la percepción.</li>
+                        <li><strong>Teología</strong>: Aplicaciones del método fenomenológico al estudio de la experiencia religiosa.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contexto">
+                <h2>Contexto Histórico y Filosófico</h2>
+
+                <h3>Contexto Histórico</h3>
+                <p>
+                    Husserl vivió en una época de profundas transformaciones históricas en Europa:
+                </p>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">Imperio Austrohúngaro (1859-1916)</h4>
+                    <p>
+                        Nace en el Imperio Austrohúngaro durante el reinado de Franz Joseph I (desde 1867). Viena se convierte en 
+                        un centro cultural e industrial de gran importancia mundial, una meca artística y filosófica donde confluyen 
+                        el romanticismo tardío, el positivismo y nuevas corrientes culturales.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">Primera Guerra Mundial (1914-1918)</h4>
+                    <p>
+                        La Gran Guerra sacude los fundamentos de la civilización europea. Husserl pierde a su hijo Wolfgang en el 
+                        conflicto. La guerra contribuye a su diagnóstico de la "crisis de las ciencias europeas" y la necesidad de 
+                        una renovación radical de la filosofía.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">República de Weimar y ascenso del nazismo (1918-1938)</h4>
+                    <p>
+                        En 1933, el régimen nazi prohíbe a Husserl enseñar por su origen judío, a pesar de haberse convertido al 
+                        cristianismo. Su antiguo discípulo Heidegger, como rector de Friburgo afiliado al partido nazi, no lo defiende, 
+                        causando una dolorosa ruptura. Husserl muere en 1938 en un clima de creciente persecución.
+                    </p>
+                </div>
+
+                <h3>Contexto Filosófico</h3>
+
+                <div class="card">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Crisis de la filosofía a finales del siglo XIX</h4>
+                    <p>
+                        A finales del siglo XIX, la filosofía se encuentra sumida en el <strong>escepticismo</strong>, el 
+                        <strong>relativismo</strong> y el <strong>psicologismo</strong>. El positivismo científico amenaza con 
+                        reducir la filosofía a una mera psicología descriptiva. Husserl ve necesario refundar la filosofía como 
+                        ciencia rigurosa.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">El psicologismo dominante</h4>
+                    <p>
+                        La tendencia predominante en lógica y teoría del conocimiento es el psicologismo, que reduce las leyes lógicas 
+                        a leyes psicológicas. Husserl considera esto un error fatal que destruye la objetividad del conocimiento y 
+                        dedica los <em>Prolegómenos</em> a su refutación.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">El neokantismo</h4>
+                    <p>
+                        Las escuelas neokantianas (Marburgo y Baden) dominan la filosofía alemana. Aunque Husserl se acerca a motivos 
+                        kantianos con su fenomenología trascendental, critica al neokantismo por su excesivo formalismo y su distancia 
+                        de la experiencia vivida.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">El desarrollo de las ciencias</h4>
+                    <p>
+                        Las ciencias naturales experimentan un desarrollo espectacular. La física, las matemáticas, la psicología 
+                        experimental y la fisiología avanzan rápidamente. Husserl, con formación matemática, está familiarizado con 
+                        estos desarrollos pero critica el cientificismo que reduce toda realidad a lo mensurable.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">La tradición fenomenológica</h4>
+                    <p>
+                        Aunque Husserl funda la fenomenología como movimiento filosófico, el término tiene antecedentes en Hegel y 
+                        en la psicología descriptiva de Brentano. Husserl transforma radicalmente el significado del término, haciendo 
+                        de la fenomenología el método fundamental de una filosofía rigurosa.
+                    </p>
+                </div>
+            </section>
+
+            <section id="fuentes">
+                <h2>Fuentes y Referencias</h2>
+
+                <h3>Recursos en Línea</h3>
+
+                <div class="fuentes-list">
+                    <div class="fuente-item">
+                        <strong>Wikipedia - Edmund Husserl:</strong><br>
+                        <a href="https://es.wikipedia.org/wiki/Edmund_Husserl" target="_blank">
+                            https://es.wikipedia.org/wiki/Edmund_Husserl
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Enciclopedia Filosófica Online - Husserl:</strong><br>
+                        <a href="https://www.philosophica.info/voces/husserl/Husserl.html" target="_blank">
+                            https://www.philosophica.info/voces/husserl/Husserl.html
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Encyclopaedia Herder - Husserl:</strong><br>
+                        <a href="https://encyclopaedia.herdereditorial.com/wiki/Autor:Husserl,_Edmund" target="_blank">
+                            https://encyclopaedia.herdereditorial.com/wiki/Autor:Husserl,_Edmund
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Universidad Autónoma del Estado de Hidalgo - Edmund Husserl en la fenomenología:</strong><br>
+                        <a href="https://www.uaeh.edu.mx/scige/boletin/prepa3/n7/m9.html" target="_blank">
+                            https://www.uaeh.edu.mx/scige/boletin/prepa3/n7/m9.html
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Filco.es - Edmund Husserl y el nuevo método filosófico:</strong><br>
+                        <a href="https://filco.es/edmund-husserl-nuevo-metodo-filosofico/" target="_blank">
+                            https://filco.es/edmund-husserl-nuevo-metodo-filosofico/
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Dialektika - Filosofía de Edmund Husserl:</strong><br>
+                        <a href="https://dialektika.org/perfiles-edmund-husserl-filosofia/" target="_blank">
+                            https://dialektika.org/perfiles-edmund-husserl-filosofia/
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Centro de Estudios Filosóficos - Edmund Husserl y su contexto:</strong><br>
+                        <a href="https://centrodeestudiosfilosoficos.com.mx/blog/edmund-husserl-y-su-contexto/" target="_blank">
+                            https://centrodeestudiosfilosoficos.com.mx/blog/edmund-husserl-y-su-contexto/
+                        </a>
+                    </div>
+                </div>
+
+                <h3>Artículos Académicos</h3>
+
+                <div class="fuentes-list">
+                    <div class="fuente-item">
+                        <strong>Academia.edu - Buscar artículos sobre Husserl:</strong><br>
+                        <a href="https://www.academia.edu/search?q=Edmund%20Husserl" target="_blank">
+                            https://www.academia.edu/search?q=Edmund%20Husserl
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Dialnet - Husserl y el mundo de la vida (Daniel Herrera Restrepo):</strong><br>
+                        <a href="https://dialnet.unirioja.es/descarga/articulo/3703031.pdf" target="_blank">
+                            https://dialnet.unirioja.es/descarga/articulo/3703031.pdf
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Dialnet - Notas sobre la relación de Husserl con Kant:</strong><br>
+                        <a href="https://dialnet.unirioja.es/descarga/articulo/8005909.pdf" target="_blank">
+                            https://dialnet.unirioja.es/descarga/articulo/8005909.pdf
+                        </a>
+                    </div>
+                </div>
+
+                <h3>Obras en Español</h3>
+
+                <div class="fuentes-list">
+                    <div class="fuente-item">
+                        <strong>Amazon España - Obras de Edmund Husserl:</strong><br>
+                        <a href="https://www.amazon.es/s?k=Edmund+Husserl" target="_blank">
+                            https://www.amazon.es/s?k=Edmund+Husserl
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Archive.org - Obras de Husserl:</strong><br>
+                        <a href="https://archive.org/search.php?query=Husserl" target="_blank">
+                            https://archive.org/search.php?query=Husserl
+                        </a>
+                    </div>
+
+                    <div class="fuente-item">
+                        <strong>Meditaciones Cartesianas (PDF):</strong><br>
+                        <a href="https://richardfong.files.wordpress.com/2011/02/husserl-edmund-meditaciones-cartesianas-fce-1996.pdf" target="_blank">
+                            https://richardfong.files.wordpress.com/2011/02/husserl-edmund-meditaciones-cartesianas-fce-1996.pdf
+                        </a>
+                    </div>
+                </div>
+
+                <h3>Bibliografía Recomendada</h3>
+                <div class="card">
+                    <h4 style="color: var(--primary-color); margin-top: 0;">Obras de Husserl en español:</h4>
+                    <ul>
+                        <li><em>Investigaciones Lógicas</em> (2 vols.), Revista de Occidente / Alianza Editorial</li>
+                        <li><em>Ideas relativas a una fenomenología pura y una filosofía fenomenológica</em>, FCE</li>
+                        <li><em>Meditaciones Cartesianas</em>, Tecnos / FCE</li>
+                        <li><em>La crisis de las ciencias europeas y la fenomenología trascendental</em>, Crítica</li>
+                        <li><em>Lógica Formal y Lógica Trascendental</em>, UNAM</li>
+                        <li><em>La filosofía como ciencia estricta</em>, Nova</li>
+                        <li><em>Lecciones de fenomenología de la conciencia interna del tiempo</em>, Trotta</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4 style="color: var(--primary-color); margin-top: 0;">Estudios sobre Husserl:</h4>
+                    <ul>
+                        <li>San Martín, J.: <em>La fenomenología de Husserl como utopía de la razón</em></li>
+                        <li>Walton, R.: <em>Introducción a la fenomenología</em></li>
+                        <li>Zahavi, D.: <em>Husserl's Phenomenology</em></li>
+                        <li>Moran, D.: <em>Edmund Husserl: Founder of Phenomenology</em></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 - Página web sobre Edmund Husserl</p>
+            <p>Creado como recurso educativo sobre la vida, obra y pensamiento del filósofo</p>
+        </footer>
     </div>
-  </header>
 
-  <main>
-    <section>
-      <h2>Biografía y contexto histórico</h2>
-      <p>Edmund Husserl (1859–1938), filósofo alemán nacido en Moravia, fue el fundador de la fenomenología. Influido por Franz Brentano, estudió matemática y filosofía. Enseñó en Halle, Göttingen y Friburgo. Fue una figura central en la transición del siglo XIX al XX, promoviendo una filosofía rigurosa y trascendental.</p>
-    </section>
+    <div class="scroll-top" id="scrollTop">
+        ↑
+    </div>
 
-    <section>
-      <h2>Conceptos fundamentales</h2>
-      <p><strong>Intencionalidad:</strong> La conciencia siempre está dirigida a algo.</p>
-      <blockquote>"Toda conciencia es conciencia de algo" — <em>Investigaciones Lógicas</em></blockquote>
-      <p><strong>Epoché:</strong> Suspensión de juicio sobre la existencia del mundo.</p>
-      <blockquote>"Pongamos entre paréntesis el mundo para acceder a la experiencia pura" — <em>Ideas I</em></blockquote>
-      <p><strong>Noesis y Noema:</strong> Estructura dual de los actos de conciencia: acto (noesis) y contenido (noema).</p>
-      <blockquote>"El noema es el sentido del objeto tal como se da; la noesis, el acto consciente que lo vive" — <em>Meditaciones Cartesianas</em></blockquote>
-    </section>
+    <script>
+        // Scroll suave para los enlaces de navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const navHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = target.offsetTop - navHeight;
 
-    <section>
-      <h2>Influencias</h2>
-      <ul>
-        <li><strong>Recibidas:</strong> Franz Brentano, Carl Stumpf, Immanuel Kant</li>
-        <li><strong>Ejercidas:</strong> Heidegger, Sartre, Merleau-Ponty, Lévinas, Ricoeur</li>
-      </ul>
-    </section>
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    <section>
-      <h2>Obras principales</h2>
-      <ul>
-        <li><a href="https://archive.org/details/investigaciones-logicas-1-edmund-husserl" target="_blank">Investigaciones Lógicas (1900–1901)</a></li>
-        <li><a href="https://archive.org/details/IdeasIEspannolEdmundHusserl" target="_blank">Ideas relativas a una fenomenología pura (1913)</a></li>
-        <li><a href="https://archive.org/details/husserl-edmund.-meditaciones-cartesianas-ocr-1996" target="_blank">Meditaciones Cartesianas (1929)</a></li>
-        <li><a href="https://archive.org/details/problemas-fundamentales-de-la-fenomenologia-edmund-husserl" target="_blank">Problemas fundamentales de la fenomenología (1936)</a></li>
-        <li><a href="https://archive.org/details/husserl-e.-la-crisis-de-las-ciencias-europeas-y-la-fenomenologia-trascendental-epl-fs-1936-2022" target="_blank">La crisis de las ciencias europeas (1936)</a></li>
-        <li><a href="https://archive.org/details/filosofia-primera-1923-1924-edmund-husserl" target="_blank">Filosofía primera (1923/24)</a></li>
-      </ul>
-    </section>
+        // Botón scroll to top
+        const scrollTopBtn = document.getElementById('scrollTop');
 
-    <section>
-      <h2>Artículos en Academia.edu</h2>
-      <ul>
-        <li><a href="https://www.academia.edu/44628325/Resumen_de_La_idea_de_la_fenomenolog%C3%ADa_de_Edmund_Husserl" target="_blank">Resumen de 'La idea de la fenomenología' – F. Puricelli</a></li>
-        <li><a href="https://www.academia.edu/38703736/Edmund_Husserl_La_idea_de_la_fenomenolog%C3%ADa" target="_blank">Edmund Husserl y la idea de la fenomenología – Mendoza-Canales</a></li>
-        <li><a href="https://www.academia.edu/39321757/Enfoque_fenomenol%C3%B3gico_de_Edmund_Husserl" target="_blank">Enfoque fenomenológico – R. J. Rodríguez</a></li>
-      </ul>
-    </section>
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
 
-    <section>
-      <h2>Videos en YouTube</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=7uZbTQqG2V0" target="_blank">La fenomenología de Husserl – Filosofía en Breve</a></li>
-        <li><a href="https://www.youtube.com/watch?v=cacxKiK63JQ" target="_blank">Edmund Husserl – Introducción (Academia Play)</a></li>
-      </ul>
-    </section>
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-    <section>
-      <h2>Fuentes utilizadas</h2>
-      <ul>
-        <li>Wikipedia – Edmund Husserl</li>
-        <li>Psicología y Mente – Biografía de Husserl</li>
-        <li>Philosophica.info – Voz "Husserl"</li>
-        <li>Revistas científicas y textos de Husserl en Archive.org</li>
-        <li>Academia.edu – Artículos académicos</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Sitio sobre Edmund Husserl | Contenido con fines educativos</p>
-  </footer>
+        // Animación de entrada para las secciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .obra-card, .influencia-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Highlight de la sección activa en el menú
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const navHeight = document.querySelector('nav').offsetHeight;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navHeight - 10;
+                const sectionHeight = section.clientHeight;
+
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.background = 'rgba(255,255,255,0.2)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
